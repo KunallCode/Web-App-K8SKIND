@@ -21,7 +21,7 @@ phases:
   post_build:
     commands:
       - echo Updating kubernetes deployment...
-      - cd./k8s
+      - cd ./k8s
       - aws eks update-kubeconfig --region ap-south-1 --name demo-cluster-1
       - kubectl get ns webapp || kubectl create namespace webapp
       - kubectl apply -f k8s-aws.yaml
