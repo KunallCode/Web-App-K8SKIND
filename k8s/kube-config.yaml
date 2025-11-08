@@ -15,9 +15,6 @@ data:
       username: kunal
       groups:
         - system:masters
-
-
-
 kind: ConfigMap
 metadata:
   name: aws-auth
