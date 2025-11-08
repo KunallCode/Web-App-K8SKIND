@@ -6,7 +6,7 @@ data:
       groups:
         - system:bootstrappers
         - system:nodes
-    - rolearn: arn:aws:iam::208959856945:role/service-role/codebuild-Webapp-project-dev-service-role
+    - rolearn: arn:aws:iam::208959856945:role/codebuild-Webapp-project-dev-service-role
       username: build
       groups:
         - system:masters
