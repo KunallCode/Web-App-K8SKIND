@@ -1,0 +1,24 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - rolearn: arn:aws:iam::208959856945:role/eksctl-demo-cluster-1-cluster-ServiceRole-6SrDsPdy9Edt
+      username: system:node:{{EC2PrivateDNSName}}
+      groups:
+        - system:bootstrappers
+        - system:nodes
+    - rolearn: arn:aws:iam::208959856945:role/service-role/codebuild-Webapp-project-dev-service-role
+      username: build
+      groups:
+        - system:masters
+  mapUsers: |
+    - userarn: arn:aws:iam::208959856945:user/kunal
+      username: kunal
+      groups:
+        - system:masters
+
+
+
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
